@@ -56,15 +56,14 @@ void PhoneBook::searchContacts(){
 	}
 	std::cout << "|     INDEX|FIRST NAME| LAST NAME|  NICKNAME|" << std::endl;
 	std::cout << "|----------|----------|----------|----------|" << std::endl;
-	for (int i = 0; i < contactCount; i++) {
+	for (int i = 0; i < this->contactCount; i++) {
 		itoa.str("");
 		itoa << (i + 1);
 		this->contacts[i].table(itoa.str());
 	}
 	int index;
 	index = PhoneBook::input("Please enter the index of the contact you want to display: ");
-	std::cout << index << std::endl;
-	if (index < 9 && index > 0){
+	if (index < this->contactCount && index > 0){
 		itoa.str("");
 		itoa << index;
 		this->contacts[(index - 1)].display(itoa.str());

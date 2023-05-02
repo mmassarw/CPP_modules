@@ -1,10 +1,10 @@
 #include "Zombie.hpp"
 
 Zombie::Zombie(std::string string){
-	std::cout << "Zombie " << this->name << " has been called." << std::endl;
 	if (string.empty())
 		return;
 	this->name = string;
+	std::cout << "Zombie " << this->name << " has been called." << std::endl;
 	this->announce();
 }
 
