@@ -3,7 +3,7 @@ NAME = a.out
 CPP = c++
 CPPFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
-SRCS = Fixed.cpp main.cpp
+SRCS = ClapTrap.cpp ScavTrap.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
