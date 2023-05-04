@@ -13,6 +13,8 @@ ClapTrap::ClapTrap(ClapTrap const& copy){
 }
 
 ClapTrap&	ClapTrap::operator=(ClapTrap const& rhs){
+	if (this == &rhs)
+		return;
 	this->_name = rhs._name;
 	this->_hp = rhs._hp;
 	this->_energy = rhs._energy;

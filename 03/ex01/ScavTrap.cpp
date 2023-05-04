@@ -19,6 +19,8 @@ ScavTrap::ScavTrap(ScavTrap const& copy) : ClapTrap(copy){
 }
 
 ScavTrap&	ScavTrap::operator=(ScavTrap const& rhs){
+	if (this == &rhs)
+		return;
 	this->_name = rhs._name;
 	this->_hp = rhs._hp;
 	this->_energy = rhs._energy;

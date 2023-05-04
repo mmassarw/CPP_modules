@@ -19,6 +19,8 @@ FragTrap::FragTrap(FragTrap const& copy) : ClapTrap(copy){
 }
 
 FragTrap&	FragTrap::operator=(FragTrap const& rhs){
+	if (this == &rhs)
+		return;
 	this->_name = rhs._name;
 	this->_hp = rhs._hp;
 	this->_energy = rhs._energy;
