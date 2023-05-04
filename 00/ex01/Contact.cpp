@@ -18,18 +18,25 @@ std::string	Contact::input(std::string prompt){
 		else
 			std::cout << "Prompt error" << std::endl;
 	} while (!state && !std::cin.eof());
-	if (std::cin.eof()){
-		std::cout << "EOF entered, exiting program" << std::endl;
-	}
 	return (string);
 }
 
 void	Contact::initialize(){
 	this->first = this->input("First Name: ");
+	if (this->first.empty())
+		return;
 	this->last = this->input("Last Name: ");
+	if (this->last.empty())
+		return;
 	this->nick = this->input("Nickname: ");
+	if (this->nick.empty())
+		return;
 	this->digits = this->input("Phone Number: ");
+	if (this->digits.empty())
+		return;
 	this->secret = this->input("Darkest Secret: ");
+	if (this->secret.empty())
+		return;
 }
 
 void	Contact::display(std::string index){

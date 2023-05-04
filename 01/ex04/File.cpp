@@ -16,6 +16,8 @@ void	File::replace(std::string string_to_replace, std::string replacing_string){
 			content += line;
 			content += "\n";
 		}
+		if (content.length())
+			content.erase(content.length() - 1, content.length() - 1);
 		size_t	pos = content.find(string_to_replace);
 		while(pos != std::string::npos && string_to_replace != "") {
 			content.erase(pos, string_to_replace.length());
@@ -25,6 +27,7 @@ void	File::replace(std::string string_to_replace, std::string replacing_string){
 		std::ofstream	outfile(this->_outfile.c_str());
 	if (!outfile.is_open()) {
 		std::cerr << "could not open file" << std::endl;
+		infile.close();
 		return;
 	}
 		outfile << content;

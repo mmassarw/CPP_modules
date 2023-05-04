@@ -12,14 +12,14 @@ int	main(){
 	{
 		prompt = Contact::input("Enter your prompt: ");
 		if (std::cin.eof())
-			std::exit(0);
+			return (1);
 		else if (prompt == "ADD")
 			phoneBook.addContact();
 		else if (prompt == "SEARCH")
 			phoneBook.searchContacts();
 		else if (prompt == "EXIT"){
 			std::cout << "Exiting" << std::endl;
-			std::exit(0);
+			return (0);
 		} else
 			 std::cout << "Incorrect input" << std::endl;
 	}

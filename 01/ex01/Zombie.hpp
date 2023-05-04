@@ -11,7 +11,6 @@ class	Zombie {
 
 		void	announce();
 		void	setName(std::string);
-		Zombie* zombieHorde(int, std::string);
 
 	private:
 		std::string	name;
