@@ -18,7 +18,7 @@ int	main(){
 		else if (prompt == "SEARCH")
 			phoneBook.searchContacts();
 		else if (prompt == "EXIT"){
-			std::cout << "Exiting";
+			std::cout << "Exiting" << std::endl;
 			std::exit(0);
 		} else
 			 std::cout << "Incorrect input" << std::endl;

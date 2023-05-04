@@ -14,6 +14,7 @@ int main()
 	j->makeSound();
 	i->makeSound(); //will output the cat sound!
 	k->makeSound();
+	*i = *j;
 	delete meta;
 	delete j;
 	delete i;

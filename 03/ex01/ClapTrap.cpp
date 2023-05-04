@@ -4,7 +4,7 @@ ClapTrap::ClapTrap() : _name("default"), _hp(10), _energy(10), _ad(10){
 	std::cout << this->_getType() << " " << this->_name << " constructed" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string& name) : _name(name), _hp(10), _energy(10), _ad(10){
+ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _energy(10), _ad(10){
 	std::cout << this->_getType() << " " << this->_name << " constructed" << std::endl;
 }
 
@@ -36,7 +36,7 @@ void	ClapTrap::attack(const std::string& target){
 		std::cout << this->_getType() << " " << this->_name << " is out of energy" << std::endl;
 		return;
 	}
-	std::cout << this->_getType() << " " << this->_name << " is attacking " << target << " for " << this->_ad << " health points" << std::endl;
+	std::cout << this->_getType() << " " << this->_name << " is attacking " << target << ", causeing " << this->_ad << " damage" << std::endl;
 	this->_energy--;
 }
 

@@ -4,7 +4,7 @@ int main( void ) {
     std::string name;
 
 	std::cin >> name;
-    int n = 3;
+    int n = 0;
     Zombie *zombies = zombieHorde(n, name);
     for (int i = 0; i < n; i++)
         zombies[i].announce();

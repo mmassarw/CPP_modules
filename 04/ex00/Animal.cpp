@@ -12,7 +12,7 @@ Animal::Animal(Animal const& copy){
 
 Animal&	Animal::operator=(Animal const& rhs){
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->operator=(rhs);
+	this->_type = rhs._type;
 	return (*this);
 }
 

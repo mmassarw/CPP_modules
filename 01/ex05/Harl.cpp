@@ -29,8 +29,6 @@ void	Harl::complain(std::string level){
 	for(int i = 0; i < 4; i++){
 		if (level == id[i]){
 			(this->*levelptr[i])();
-			return;
 		}
 	}
-	return;
 }

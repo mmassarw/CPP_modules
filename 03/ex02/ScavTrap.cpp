@@ -7,7 +7,7 @@ ScavTrap::ScavTrap() : ClapTrap() {
 	_ad = 20;
 }
 
-ScavTrap::ScavTrap(std::string& name) : ClapTrap(name) {
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	std::cout << this->_getType() << " " << this->_name << " constructed" << std::endl;
 	_hp = 100;
 	_energy = 50;

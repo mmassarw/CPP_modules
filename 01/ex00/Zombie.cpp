@@ -5,7 +5,6 @@ Zombie::Zombie(std::string string){
 		return;
 	this->name = string;
 	std::cout << "Zombie " << this->name << " has been called." << std::endl;
-	this->announce();
 }
 
 Zombie::~Zombie(){

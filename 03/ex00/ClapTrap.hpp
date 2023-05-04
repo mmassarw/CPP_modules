@@ -15,7 +15,7 @@ class ClapTrap {
 
 	public:
 		ClapTrap();
-		ClapTrap(std::string& name);
+		ClapTrap(std::string name);
 		ClapTrap(ClapTrap const& copy);
 		ClapTrap&operator=(ClapTrap const& rhs);
 		~ClapTrap();

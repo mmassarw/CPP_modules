@@ -12,9 +12,12 @@ void	File::replace(std::string string_to_replace, std::string replacing_string){
 	if (infile.is_open() && infile.good()){
 		std::string	content;
 		std::string	line;
-		std::getline(infile, content, '\0');
-		size_t			pos = content.find(string_to_replace);
-		while(pos != std::string::npos) {
+		while (std::getline(infile, line)){
+			content += line;
+			content += "\n";
+		}
+		size_t	pos = content.find(string_to_replace);
+		while(pos != std::string::npos && string_to_replace != "") {
 			content.erase(pos, string_to_replace.length());
 			content.insert(pos, replacing_string);
 			pos = content.find(string_to_replace, pos + replacing_string.length());

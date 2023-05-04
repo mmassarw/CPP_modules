@@ -7,7 +7,7 @@ FragTrap::FragTrap() : ClapTrap() {
 	_ad = 20;
 }
 
-FragTrap::FragTrap(std::string& name) : ClapTrap(name) {
+FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 	std::cout << this->_getType() << " " << this->_name << " constructed" << std::endl;
 	_hp = 100;
 	_energy = 50;
@@ -35,5 +35,5 @@ std::string	FragTrap::_getType()const{
 }
 
 void	FragTrap::highFiveGuys(){
-	std::cout << this->_getType() << " " << this->_name << " offers to highfive to increase moral by 5 points" << std::endl;
+	std::cout << this->_getType() << " " << this->_name << " offers to highfive to increase morale by 5 points" << std::endl;
 }

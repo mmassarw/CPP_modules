@@ -12,7 +12,7 @@ WrongCat::WrongCat(WrongCat const& copy) : WrongAnimal(){
 
 WrongCat&	WrongCat::operator=(WrongCat const& rhs){
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->operator=(rhs);
+	this->_type = rhs._type;
 	return (*this);
 }
 

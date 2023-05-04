@@ -17,7 +17,8 @@ Dog&	Dog::operator=(Dog const& rhs){
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this->_brain)
 		delete this->_brain;
-	this->operator=(rhs);
+	this->_brain = new Brain(*rhs._brain);
+	this->_type = rhs._type;
 	return (*this);
 }
 
@@ -29,4 +30,8 @@ Dog::~Dog(){
 
 void	Dog::makeSound()const{
 	std::cout << "Bark" << std::endl;
+}
+
+Brain*	Dog::getBrain(){
+	return (this->_brain);
 }

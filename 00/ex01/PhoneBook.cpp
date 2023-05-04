@@ -63,7 +63,7 @@ void PhoneBook::searchContacts(){
 	}
 	int index;
 	index = PhoneBook::input("Please enter the index of the contact you want to display: ");
-	if (index < this->contactCount && index > 0){
+	if (index < this->contactCount + 1 && index > 0){
 		itoa.str("");
 		itoa << index;
 		this->contacts[(index - 1)].display(itoa.str());
