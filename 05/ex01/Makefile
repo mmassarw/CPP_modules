@@ -3,7 +3,7 @@ NAME = a.out
 CPP = @c++
 CPPFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Bureaucrat.cpp
+SRCS = main.cpp Bureaucrat.cpp Form.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

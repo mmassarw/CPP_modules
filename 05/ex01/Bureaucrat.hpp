@@ -3,8 +3,9 @@
 
 # include <iostream>
 # include <string>
-# include <exception>
+# include "Form.hpp"
 
+class Form;
 
 class Bureaucrat {
     private:
@@ -18,26 +19,28 @@ class Bureaucrat {
         Bureaucrat& operator=(Bureaucrat const&);
         ~Bureaucrat();
 
+        void        incrementGrade(void);
+        void        decrementGrade(void);
+        void        signForm(Form&) const;
+
+        std::string getName(void) const;
+        int         getGrade(void) const;
+
+        void        setName(std::string);
+        void        setGrade(int);
+
         class GradeTooHighException : public std::exception
         {
             public:
-                virtual const char* what() const throw();
+                virtual const char* what() const throw() { return ("The maximum grade is 150"); }
         };
         class GradeTooLowException : public std::exception
         {
             public:
-                virtual const char* what() const throw();
+                virtual const char* what() const throw() { return ("The minimum grade is 1"); }
         };
-
-        void        incrementGrade(void);
-        void        decrementGrade(void);
-
-        std::string getName(void) const;
-        int         getGrade(void) const;
-        void        setName(std::string);
-        void        setGrade(int);
 };
 
-std::ostream &operator<<(std::ostream &output, Bureaucrat const &rhs);
+std::ostream &operator<<(std::ostream&, Bureaucrat const&);
 
 #endif

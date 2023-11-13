@@ -3,8 +3,6 @@
 
 # include <iostream>
 # include <string>
-# include <exception>
-
 
 class Bureaucrat {
     private:
@@ -18,26 +16,27 @@ class Bureaucrat {
         Bureaucrat& operator=(Bureaucrat const&);
         ~Bureaucrat();
 
-        class GradeTooHighException : public std::exception
-        {
-            public:
-                virtual const char* what() const throw();
-        };
-        class GradeTooLowException : public std::exception
-        {
-            public:
-                virtual const char* what() const throw();
-        };
-
         void        incrementGrade(void);
         void        decrementGrade(void);
 
         std::string getName(void) const;
         int         getGrade(void) const;
+
         void        setName(std::string);
         void        setGrade(int);
+
+        class GradeTooHighException : public std::exception
+        {
+            public:
+                virtual const char* what() const throw() { return ("The maximum grade is 150"); }
+        };
+        class GradeTooLowException : public std::exception
+        {
+            public:
+                virtual const char* what() const throw() { return ("The minimum grade is 1"); }
+        };
 };
 
-std::ostream &operator<<(std::ostream &output, Bureaucrat const &rhs);
+std::ostream &operator<<(std::ostream&, Bureaucrat const&);
 
 #endif

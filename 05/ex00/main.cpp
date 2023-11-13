@@ -14,6 +14,8 @@ int main(void)
             std::cout << e.what() << std::endl;
         }
         std::cout << b << std::endl;
+
+        Bureaucrat d("Boi", 0);
     }
     catch (std::exception & e)
     {
