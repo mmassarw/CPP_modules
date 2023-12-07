@@ -10,7 +10,7 @@ int main(int argc, char **argv) {
         return 1;
     }
 
-    int array[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int array[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     int size = sizeof(array) / sizeof(int);
 
     std::vector<int> vector(array, array + size);
@@ -18,7 +18,6 @@ int main(int argc, char **argv) {
 
     int needle = std::atoi(argv[1]);
 
-    // Test with vector
     std::vector<int>::iterator itVector = easyfind(vector, needle);
     if (itVector != vector.end()) {
         std::cout << "Found " << needle << " in vector at position " << std::endl;
@@ -26,7 +25,6 @@ int main(int argc, char **argv) {
         std::cout << needle << " not found in vector" << std::endl;
     }
 
-    // Test with list
     std::list<int>::iterator itList = easyfind(list, needle);
     if (itList != list.end()) {
         std::cout << "Found " << needle << " in list" << std::endl;
