@@ -1,7 +1,7 @@
 
 NAME = Zombies
 
-CXX = @c++
+CXX = c++
 CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp Zombie.cpp zombieHorde.cpp

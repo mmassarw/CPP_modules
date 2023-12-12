@@ -24,7 +24,7 @@ Bureaucrat::~Bureaucrat() {
 }
 
 void        Bureaucrat::setName(std::string name) {
-	this->_name = name;
+	const_cast<std::string&>(this->_name) = name;
 }
 
 void        Bureaucrat::setGrade(int grade) {
@@ -67,4 +67,12 @@ void        Bureaucrat::signForm(Form& form) const {
 std::ostream &operator<<(std::ostream &output, Bureaucrat const &rhs) {
 	output << rhs.getName() << ", bureaucrat grade " << rhs.getGrade();
 	return (output);
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw() {
+    return "The lowest grade is 150";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw() {
+    return "The highest grade is 1";
 }

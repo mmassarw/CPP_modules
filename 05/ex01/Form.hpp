@@ -8,11 +8,14 @@ class Bureaucrat;
 class Form
 {
 private:
-    std::string _name;
+    const std::string _name;
     bool        _isSigned;
-    int         _gradeToSign;
-    int         _gradeToExecute;
+    const int         _gradeToSign;
+    const int         _gradeToExecute;
 
+    void        setName( std::string );
+    void        setGradeToSign( int );
+    void        setGradeToExecute( int );
 public:
     Form();
     Form(std::string , int, int);
@@ -21,10 +24,7 @@ public:
 
     Form &operator=(const Form&);
 
-    void        setName( std::string );
     void        setSigned( bool );
-    void        setGradeToSign( int );
-    void        setGradeToExecute( int );
 
     std::string getName() const;
     bool        getSigned() const;

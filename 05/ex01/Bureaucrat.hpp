@@ -9,9 +9,11 @@ class Form;
 
 class Bureaucrat {
     private:
-        std::string _name;
+        const std::string _name;
         int         _grade;
 
+        void        setName(std::string);
+        void        setGrade(int);
     public:
         Bureaucrat();
         Bureaucrat(std::string, int);
@@ -26,8 +28,6 @@ class Bureaucrat {
         std::string getName(void) const;
         int         getGrade(void) const;
 
-        void        setName(std::string);
-        void        setGrade(int);
 
         class GradeTooHighException : public std::exception
         {

@@ -3,14 +3,13 @@
 Form::Form() : _name("Default"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150) {
 }
 
-Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _isSigned(false) {
+Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name("Default"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150) {
 	this->setName(name);
 	this->setGradeToSign(gradeToSign);
 	this->setGradeToExecute(gradeToExecute);
 }
 
-Form::Form(Form const& rhs) {
-    *this = rhs;
+Form::Form(Form const& rhs) : _name(rhs.getName()), _isSigned(rhs.getSigned()), _gradeToSign(rhs.getGradeToSign()), _gradeToExecute(rhs.getGradeToExecute()) {
 }
 
 Form& Form::operator=(Form const& rhs) {
@@ -27,7 +26,7 @@ Form::~Form() {
 }
 
 void        Form::setName(std::string name) {
-	this->_name = name;
+	const_cast<std::string&>(this->_name) = name;;
 }
 
 void        Form::setSigned( bool isSigned) {
@@ -40,7 +39,7 @@ void        Form::setGradeToSign(int gradeToSign) {
 	else if (gradeToSign > 150)
 		throw Form::GradeTooLowException();
 	else
-		this->_gradeToSign = gradeToSign;
+		const_cast<int&>(this->_gradeToSign) = gradeToSign;
 }
 
 void        Form::setGradeToExecute(int gradeToExecute) {
@@ -49,7 +48,7 @@ void        Form::setGradeToExecute(int gradeToExecute) {
 	else if (gradeToExecute > 150)
 		throw Form::GradeTooLowException();
 	else
-		this->_gradeToExecute = gradeToExecute;
+		const_cast<int&>(this->_gradeToExecute) = gradeToExecute;
 }
 
 std::string	Form::getName(void) const {
@@ -72,4 +71,12 @@ void        Form::beSigned(const Bureaucrat& bureaucrat) {
 	if (bureaucrat.getGrade() > this->_gradeToSign)
 		throw Form::GradeTooLowException();
 	this->setSigned(true);
+}
+
+const char* Form::GradeTooHighException::what() const throw() {
+    return "The lowest grade is 150";
+}
+
+const char* Form::GradeTooLowException::what() const throw() {
+    return "The highest grade is 1";
 }

@@ -13,6 +13,9 @@ private:
     int         _gradeToSign;
     int         _gradeToExecute;
 
+    void            setName( std::string );
+    void            setGradeToSign( int );
+    void            setGradeToExecute( int );
 public:
     AForm();
     AForm(std::string , int, int);
@@ -21,10 +24,7 @@ public:
 
     AForm &operator=(const AForm&);
 
-    void            setName( std::string );
     void            setSigned( bool );
-    void            setGradeToSign( int );
-    void            setGradeToExecute( int );
 
     std::string     getName() const;
     bool            getSigned() const;
@@ -37,19 +37,19 @@ public:
     class GradeTooHighException : public std::exception
     {
     public:
-        virtual const char* what() const throw() { return ("Grade too high"); }
+        virtual const char* what() const throw();
     };
 
     class GradeTooLowException : public std::exception
     {
     public:
-        virtual const char* what() const throw() { return ("Grade too low"); }
+        virtual const char* what() const throw();
     };
 
     class FormNotSigned : public std::exception
     {
     public:
-        virtual const char* what() const throw() { return ("Form not signed"); }
+        virtual const char* what() const throw();
     };
 };
 

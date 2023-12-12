@@ -1,6 +1,6 @@
 NAME = Intern
 
-CXX = @c++
+CXX = c++
 CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
