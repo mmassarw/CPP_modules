@@ -12,7 +12,7 @@ class PresidentialPardonForm : public AForm {
         PresidentialPardonForm(const PresidentialPardonForm& rhs);
         PresidentialPardonForm& operator=(const PresidentialPardonForm& rhs);
 
-        void execute(const Bureaucrat & executor);
+        void execute(const Bureaucrat & executor) const;
 };
 
 #endif

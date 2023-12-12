@@ -4,6 +4,10 @@
 #define MAX_VAL 10
 int main(int, char**)
 {
+    // const Array<int> num(2);
+    // num[0] = 1;
+    // std::cout << num[0] << std::endl;
+
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
     srand(time(NULL));

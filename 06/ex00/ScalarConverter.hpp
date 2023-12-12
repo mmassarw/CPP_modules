@@ -9,11 +9,12 @@
 #include <cstdlib>
 
 class ScalarConverter {
+    private:
+        ScalarConverter();
+        ScalarConverter(ScalarConverter const&);
     public:
-        ScalarConverter() {}
-        ScalarConverter(ScalarConverter const&) {}
-        ScalarConverter& operator=(ScalarConverter const&) { return *this; }
-        ~ScalarConverter() {}
+        ScalarConverter& operator=(ScalarConverter const&);
+        ~ScalarConverter();
 
         static void convert(const std::string&);
 };

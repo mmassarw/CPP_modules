@@ -1,4 +1,9 @@
 #include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
+
+Base::~Base(){}
 
 Base* generateRandomInstance() {
     std::srand((unsigned int)(std::time(NULL)));

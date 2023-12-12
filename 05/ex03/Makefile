@@ -1,4 +1,4 @@
-NAME = a.out
+NAME = Intern
 
 CPP = @c++
 CPPFLAGS = -g -Wall -Wextra -Werror -std=c++98

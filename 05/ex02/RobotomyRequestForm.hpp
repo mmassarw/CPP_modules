@@ -8,12 +8,12 @@
 class RobotomyRequestForm : public AForm {
     public:
         RobotomyRequestForm();
-        RobotomyRequestForm(const std::string& name);
+        RobotomyRequestForm(const std::string&);
         ~RobotomyRequestForm();
-        RobotomyRequestForm(const RobotomyRequestForm& rhs);
-        RobotomyRequestForm & operator=(const RobotomyRequestForm& rhs);
+        RobotomyRequestForm(const RobotomyRequestForm&);
+        RobotomyRequestForm & operator=(const RobotomyRequestForm&);
 
-        void execute(const Bureaucrat & executor);
+        void execute(const Bureaucrat & executor) const;
 };
 
 #endif

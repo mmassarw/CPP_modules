@@ -1,9 +1,8 @@
 #include "ScalarConverter.hpp"
-#include <iostream>
-#include <limits>
-#include <cmath>
-#include <iomanip>
-#include <cstdlib>
+
+ScalarConverter::ScalarConverter() {}
+
+
 
 static bool isValidNumber(const std::string& literal) {
     if (literal.length() == 1 && std::isprint(literal[0]) && !std::isdigit(literal[0]))
@@ -11,7 +10,7 @@ static bool isValidNumber(const std::string& literal) {
 
     if (literal == "+inff" || literal == "-inff" || literal == "nanf" || literal == "+inf" || literal == "-inf" || literal == "nan")
         return true;
-
+    
     std::string validate = literal;
 
     if (literal[literal.length() - 1] == 'f')
@@ -37,6 +36,12 @@ static bool isValidNumber(const std::string& literal) {
 }
 
 void ScalarConverter::convert(const std::string& literal) {
+    if (literal.empty()) {
+        std::cout << "char: Non displayable" << std::endl;
+        std::cout << "int: 0" << std::endl;
+        std::cout << "float: 0.0f" << std::endl;
+        std::cout << "double: 0.0" << std::endl;
+    }
     if (!isValidNumber(literal)) {
         std::cout << "invalid input" << std::endl;
         return ;
@@ -71,7 +76,6 @@ void ScalarConverter::convert(const std::string& literal) {
         std::cout << "int: " << static_cast<int>(value) << std::endl;
     }
 
-    // Convert to float and double with fixed decimal point
     std::cout << std::fixed << std::setprecision(1);
     std::cout << "float: " << static_cast<float>(value) << 'f' << std::endl;
     std::cout << "double: " << value << std::endl;

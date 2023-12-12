@@ -6,11 +6,13 @@
 # include <stdint.h>
 
 class Serializer {
+    private:
+        Serializer();
+        Serializer(Serializer const&);
+
     public:
-        Serializer() {}
-        Serializer(Serializer const&) {}
-        Serializer& operator=(Serializer const&) { return *this; }
-        ~Serializer() {}
+        Serializer& operator=(Serializer const&);
+        ~Serializer();
 
         static uintptr_t serialize(Data* ptr) {
             return reinterpret_cast<uintptr_t>(ptr);

@@ -33,7 +33,15 @@ Array<T> &Array<T>::operator=(const Array &rhs) {
 }
 
 template <typename T>
-T &Array<T>::operator[](size_t index) const {
+const T &Array<T>::operator[](size_t index) const {
+    if (index >= this->_size) {
+        throw std::out_of_range("Array index out of bounds");
+    }
+    return this->elements[index];
+}
+
+template <typename T>
+T &Array<T>::operator[](size_t index) {
     if (index >= this->_size) {
         throw std::out_of_range("Array index out of bounds");
     }

@@ -18,7 +18,7 @@ RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm& 
     return (*this);
 }
 
-void    RobotomyRequestForm::execute(const Bureaucrat & bureaucrat) {
+void    RobotomyRequestForm::execute(const Bureaucrat & bureaucrat) const{
     if (!this->getSigned()) 
         throw AForm::FormNotSigned();
     if (bureaucrat.getGrade() > this->getGradeToSign())

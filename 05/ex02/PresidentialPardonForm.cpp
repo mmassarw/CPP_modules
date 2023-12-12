@@ -18,7 +18,7 @@ PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPar
     return (*this);
 }
 
-void    PresidentialPardonForm::execute(const Bureaucrat & bureaucrat) {
+void    PresidentialPardonForm::execute(const Bureaucrat & bureaucrat) const{
     if (!this->getSigned()) 
         throw AForm::FormNotSigned();
     if (bureaucrat.getGrade() > this->getGradeToSign())

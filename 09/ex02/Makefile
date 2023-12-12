@@ -1,9 +1,9 @@
-NAME = convert
+NAME = a.out
 
 CPP = @c++
 CPPFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp ScalarConverter.cpp
+SRCS = main2.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
