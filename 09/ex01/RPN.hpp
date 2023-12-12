@@ -8,11 +8,13 @@
 # include <cstdlib>
 
 class RPN {
+    private:
+        RPN();
+        RPN(RPN const&);
+
     public:
-        RPN() {}
-        RPN(RPN const&) {}
-        RPN& operator=(RPN const&) { return *this; }
-        ~RPN() {}
+        RPN& operator=(RPN const&);
+        ~RPN();
 
         static double	calculator(const std::string&);
 };

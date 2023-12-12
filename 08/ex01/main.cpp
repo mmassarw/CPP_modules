@@ -5,14 +5,14 @@
 
 int main() {
     Span sp(5);
-    sp.addNumber(6);
+    sp.addNumber(2147483647);
     try {
         std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl;
         std::cout << "Longest Span: " << sp.longestSpan() << std::endl;
     } catch (std::exception& e) {
         std::cerr << e.what() << std::endl;
     }
-    sp.addNumber(3);
+    sp.addNumber(-2147483648);
     try {
         std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl;
         std::cout << "Longest Span: " << sp.longestSpan() << std::endl;

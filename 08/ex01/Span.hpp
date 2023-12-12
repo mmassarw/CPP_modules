@@ -19,8 +19,8 @@ public:
     ~Span();
 
     void	addNumber(int);
-    int		shortestSpan();
-    int		longestSpan();
+    size_t		shortestSpan();
+    size_t		longestSpan();
 };
 
 #endif // SPAN_HPP

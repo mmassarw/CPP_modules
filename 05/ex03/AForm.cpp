@@ -72,3 +72,15 @@ void        AForm::beSigned(const Bureaucrat& bureaucrat) {
 		throw AForm::GradeTooLowException();
 	this->setSigned(true);
 }
+
+const char* AForm::GradeTooHighException::what() const throw() {
+    return "The lowest grade is 150";
+}
+
+const char* AForm::GradeTooLowException::what() const throw() {
+    return "The highest grade is 1";
+}
+
+const char* AForm::FormNotSigned::what() const throw() {
+    return "Form not signed";
+}

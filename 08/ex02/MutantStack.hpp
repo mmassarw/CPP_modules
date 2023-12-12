@@ -16,9 +16,6 @@ class MutantStack : public std::stack<T> {
     
         iterator begin();
         iterator end();
-    
-    private:
-        using std::stack<T>::c; // Use the protected member 'c' from std::stack
 };
 
 #include "MutantStack.tpp"

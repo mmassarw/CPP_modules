@@ -1,12 +1,21 @@
 #include "RPN.hpp"
 
-double calculator(const std::string& expression) {
+RPN::RPN() {}
+
+RPN::RPN(RPN const&) {}
+
+RPN& RPN::operator=(RPN const&) {
+    return *this;
+}
+
+RPN::~RPN() {}
+
+double RPN::calculator(const std::string& expression) {
     std::stack<double> stack;
     std::istringstream iss(expression);
     std::string token;
 
     while (iss >> token) {
-		std::cout << token << std::endl;
 		if (token.length() > 1 && token != "+" && token != "-" && token != "*" && token != "/") {
             throw std::runtime_error("Invalid token size: " + token);
         }

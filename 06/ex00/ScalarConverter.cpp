@@ -2,7 +2,11 @@
 
 ScalarConverter::ScalarConverter() {}
 
+ScalarConverter::ScalarConverter(ScalarConverter const&) {}
 
+ScalarConverter& ScalarConverter::operator=(ScalarConverter const&) { return *this; }
+
+ScalarConverter::~ScalarConverter() {}
 
 static bool isValidNumber(const std::string& literal) {
     if (literal.length() == 1 && std::isprint(literal[0]) && !std::isdigit(literal[0]))

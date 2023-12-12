@@ -9,7 +9,7 @@ int main(int ac, char** av) {
         double result = RPN::calculator(av[1]);
         std::cout << "Result: " << result << std::endl;
     } catch (const std::runtime_error& e) {
-        std::cerr << "Error" << std::endl;
+        std::cout << "Error" << std::endl;
     }
 
     return 0;

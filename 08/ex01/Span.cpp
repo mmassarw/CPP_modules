@@ -26,14 +26,18 @@ void Span::addNumber(int number) {
     this->numbers.push_back(number);
 }
 
-int Span::shortestSpan() {
+size_t Span::shortestSpan() {
     if (this->numbers.size() < 2) {
         throw std::logic_error("Not enough numbers to find a span.");
     }
+    size_t span;
     std::sort(this->numbers.begin(), this->numbers.end());
-    int shortest = std::numeric_limits<int>::max();
+    size_t shortest = std::numeric_limits<size_t>::max();
     for (size_t i = 0; i < this->numbers.size() - 1; ++i) {
-        int span = this->numbers[i + 1] - this->numbers[i];
+        if (this->numbers[i + 1] > this->numbers[i])
+            span = static_cast<size_t>(this->numbers[i + 1]) - static_cast<size_t>(this->numbers[i]);
+        else
+            span = static_cast<size_t>(this->numbers[i]) - static_cast<size_t>(this->numbers[i + 1]);
         if (span < shortest) {
             shortest = span;
         }
@@ -41,11 +45,11 @@ int Span::shortestSpan() {
     return shortest;
 }
 
-int Span::longestSpan() {
+size_t Span::longestSpan() {
     if (this->numbers.size() < 2) {
         throw std::logic_error("Not enough numbers to find a span.");
     }
     int min = *std::min_element(this->numbers.begin(), this->numbers.end());
     int max = *std::max_element(this->numbers.begin(), this->numbers.end());
-    return max - min;
+    return static_cast<size_t>(max) - static_cast<size_t>(min);
 }
