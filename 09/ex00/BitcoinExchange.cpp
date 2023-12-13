@@ -1,14 +1,34 @@
 #include "BitcoinExchange.hpp"
 
 BitcoinExchange::BitcoinExchange(void) {
-    _months[1] = 31; _months[2] = 29; _months[3] = 31; _months[4] = 30; _months[5] = 31; _months[6] = 30;
-    _months[7] = 31; _months[8] = 31; _months[9] = 30; _months[10] = 31; _months[11] = 30; _months[12] = 31;
+    _months[1] = 31;
+    _months[2] = 29;
+    _months[3] = 31;
+    _months[4] = 30;
+    _months[5] = 31;
+    _months[6] = 30;
+    _months[7] = 31;
+    _months[8] = 31;
+    _months[9] = 30;
+    _months[10] = 31;
+    _months[11] = 30;
+    _months[12] = 31;
     initData(DATA_FILE);
 }
 
 BitcoinExchange::BitcoinExchange(const std::string& dataFile) {
-    _months[1] = 31; _months[2] = 29; _months[3] = 31; _months[4] = 30; _months[5] = 31; _months[6] = 30;
-    _months[7] = 31; _months[8] = 31; _months[9] = 30; _months[10] = 31; _months[11] = 30; _months[12] = 31;
+    _months[1] = 31;
+    _months[2] = 29;
+    _months[3] = 31;
+    _months[4] = 30;
+    _months[5] = 31;
+    _months[6] = 30;
+    _months[7] = 31;
+    _months[8] = 31;
+    _months[9] = 30;
+    _months[10] = 31;
+    _months[11] = 30;
+    _months[12] = 31;
     initData(dataFile);
 }
 
