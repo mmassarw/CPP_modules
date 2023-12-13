@@ -11,7 +11,7 @@ RPN& RPN::operator=(RPN const&) {
 RPN::~RPN() {}
 
 double RPN::calculator(const std::string& expression) {
-    std::stack<double> stack;
+    std::stack<double, std::list<double> > stack;
     std::istringstream iss(expression);
     std::string token;
 

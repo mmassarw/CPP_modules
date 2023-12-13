@@ -6,6 +6,7 @@
 # include <string>
 # include <sstream>
 # include <cstdlib>
+# include <list>
 
 class RPN {
     private:
