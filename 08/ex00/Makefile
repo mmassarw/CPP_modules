@@ -1,4 +1,4 @@
-NAME = a.out
+NAME = easyfind
 
 CXX = c++
 CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98

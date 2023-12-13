@@ -1,4 +1,4 @@
-NAME = a.out
+NAME = templates
 
 CXX = c++
 CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98

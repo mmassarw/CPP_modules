@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
 
     std::vector<int>::iterator itVector = easyfind(vector, needle);
     if (itVector != vector.end()) {
-        std::cout << "Found " << needle << " in vector at position " << std::endl;
+        std::cout << "Found " << needle << " in vector at position " << itVector - vector.begin() << std::endl;
     } else {
         std::cout << needle << " not found in vector" << std::endl;
     }

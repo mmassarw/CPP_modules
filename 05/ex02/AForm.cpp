@@ -80,3 +80,7 @@ const char* AForm::GradeTooHighException::what() const throw() {
 const char* AForm::GradeTooLowException::what() const throw() {
     return "The highest grade is 1";
 }
+
+const char* AForm::FormNotSigned::what() const throw() {
+    return "Form not signed";
+}
